@@ -1,0 +1,24 @@
+import requests
+
+# Set the endpoint URL and the API key
+endpoint = "https://api.stockbroker.com/orders"
+api_key = "YOUR_API_KEY"
+
+# Set the parameters for the order
+params = {
+  "symbol": "AAPL",
+  "type": "market",
+  "side": "buy",
+  "quantity": 100
+}
+
+# Set the headers
+headers = {
+  "Authorization": f"Bearer {api_key}"
+}
+
+# Make the request
+response = requests.post(endpoint, json=params, headers=headers)
+
+# Print the response
+print(response.json())
